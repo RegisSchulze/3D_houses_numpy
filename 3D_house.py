@@ -133,8 +133,8 @@ y=np.linspace(shapes.bounds.iloc[0][1],shapes.bounds.iloc[0][3], out_image_CHM.s
 z=out_image_CHM
 #use plotly to plot 3d interactive figure in browser
 fig = go.Figure(data=[go.Surface(z=z)])
-fig.update_layout(title='Mt Bruno Elevation', autosize=True,
-                  margin=dict(l=65, r=50, b=65, t=90))
+fig.update_layout(title='Mt Bruno Elevation', autosize=True)
+                 # margin=dict(l=65, r=50, b=65, t=90))
 fig.show()
 
 #print runtime
