@@ -76,7 +76,7 @@ for i in range(1,18):
         bound=pd.DataFrame([[x1,y1,x2,y2,i]], columns=['x1','y1','x2','y2','zone'])
         #get all bounds of all zones in a pandas df with indexes(zone=number) and columnames(x1,y1,x2,y2) fitting
         df=pd.concat([df,bound])
-#reset to sequential index
+#reset to sequential indexext
 df=df.reset_index(drop=True)
 #find which zone 
 zone_bounds=df[(df['x1'] < x) & (df['x2'] > x) & (df['y1'] < y) & (df['y2'] > y)]
