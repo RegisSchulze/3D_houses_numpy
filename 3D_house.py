@@ -13,6 +13,7 @@ import time
 from shapely.geometry import Polygon
 import geopandas as gpd
 import plotly.io as pio
+
 #added to be able to display plotly 3d graph in browser 
 #as this does not plot in spyder directly
 pio.renderers.default='browser'
@@ -25,7 +26,6 @@ number=input('Huisnummer?')
 
 #used for calculating total runtime
 start_time = time.time()
-
 
 #go the vlaanderen basisregisters api under section adresmatch
 r=requests.get('https://api.basisregisters.vlaanderen.be/v1/adresmatch', params={'postcode':postal_code, 'straatnaam':street, 'huisnummer':number})
@@ -87,11 +87,11 @@ for i in range(1,43):
         x2=c.bounds[2]
         y2=c.bounds[3]
         bound=pd.DataFrame([[x1,y1,x2,y2,i]], columns=['x1','y1','x2','y2','zone'])
-        #get all bounds of all zones in a pandas df with indexes(zone=number) and columnames(x1,y1,x2,y2) fitting
+        #get all bounds of all zones in a pandas df and columnames(x1,y1,x2,y2,zone) fitting
         df=pd.concat([df,bound])
 #reset to sequential index
 df=df.reset_index(drop=True)
-#find which zone 
+#find in which of these zones the house is located
 zone_bounds=df[(df['x1'] < x_house) & (df['x2'] > x_house) & (df['y1'] < y_house) & (df['y2'] > y_house)]
 #zone of house has been found
 zone_number=zone_bounds.zone.iloc[0]
