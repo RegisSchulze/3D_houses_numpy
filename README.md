@@ -53,6 +53,11 @@ NOTE: these files were downloaded and unzipped in directory: 'home/regis/Desktop
 
 This file prints the 3D house of a certain adress in Flanders; using the DSM and DTM data from "The digitaal hoogtemodel vlaanderen".
 
+The rendered plots below are for the adress: Koophandelsplein 23, 9000 Gent
+
+Google maps link:
+https://www.google.com/maps/place/Koophandelsplein+23,+9000+Gent/@51.0499612,3.71851,17z/data=!4m13!1m7!3m6!1s0x47c3714480aeb4dd:0xc7db0f3c8e38c500!2sKoophandelsplein+23,+9000+Gent!3b1!8m2!3d51.0499612!4d3.7206987!3m4!1s0x47c3714480aeb4dd:0xc7db0f3c8e38c500!8m2!3d51.0499612!4d3.7206987
+
 Steps of the code:
 1. Import necessary packages: lines 1-15
 2. Render plotly.io figures in browser, due to plotly not being able to plot directly in spyder: lines 17-19
