@@ -121,12 +121,12 @@ CHM = DSM - DTM
 
 #create 2D-plot with z-axis equaling the CHM
 ep.plot_bands(CHM,
-              cmap='terrain')
+              cmap='terrain',title='2d plot house')
 plt.show()
 
 #use plotly to plot 3d interactive figure in browser
 fig = go.Figure(data=[go.Surface(z=CHM)])
-fig.update_layout(title='3d Plot House', autosize=True)
+fig.update_layout(title='3d plot House', autosize=True)
 fig.show()
 
 #print runtime
