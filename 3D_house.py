@@ -115,7 +115,7 @@ else:
     with rasterio.open("/home/regis/Desktop/3D house/k01/DHMVIIDTMRAS1m_k"+str(zone_number)+"/GeoTIFF/DHMVIIDTMRAS1m_k"+str(zone_number)+".tif") as src:
             out_image_DTM, m = rasterio.mask.mask(src, shapes, crop=True)
             DTM=out_image_DTM[0]
-
+            
 #calculate Canopy Height Model(=CHM) for this house
 CHM = DSM - DTM
 
