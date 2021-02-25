@@ -59,11 +59,11 @@ Steps of the code:
 4. Determine in which of the 43 zones the adress can be found: lines 66-97
 5. Open the DSM and DTM file of the correct zone: lines 99-119, 
 NOTE these files were downloaded and unzipped in directory: 'home/regis/Desktop/3D house/k01', change this to the directory where your unzipped DTM and DSM files are
-7. Calculate the CHM: lines 121-122
+7. Calculate the CHM, by masking the DSM and DTM tiff files with the polygon of the house: lines 121-122
 8. Create a 2D-plot of the house, with height differences portrayed by different collors, by using earthpy.plot and matplotlib.pyplot: lines 124-127
 9. Create a 3D-plot of the house using plotly.io: lines 129-132
 10. Print execution time: lines 134-135
 
-###Have fun!!!
+### Have fun!!!
 
 
