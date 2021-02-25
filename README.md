@@ -63,8 +63,19 @@ Steps of the code:
 7. Open the DSM and DTM file of the correct zone: lines 99-117 
 8. Calculate the CHM, by masking the DSM and DTM tiff files with the polygon of the house: lines 119-120
 9. Create a 2D-plot of the house, with height differences portrayed by different collors, by using earthpy.plot and matplotlib.pyplot: lines 122-125
-10. Create a 3D-plot of the house using plotly.io: lines 127-130
-11. Print execution time: lines 132-133
+
+
+![alt text](https://github.com/RegisSchulze/3D_houses_numpy/blob/main/2d_koophandelsplein_23_gent.png?raw=true)
+
+11. Create a 3D-plot of the house using plotly.io: lines 127-130
+
+![alt text](https://github.com/RegisSchulze/3D_houses_numpy/blob/main/3d_koophandelsplein_23_gent.png?raw=true)
+
+![alt text](https://github.com/RegisSchulze/3D_houses_numpy/blob/main/3d_koophandelsplein_23_2.png?raw=true)
+
+
+
+13. Print execution time: lines 132-133
 
 ### Have fun!!!
 
