@@ -96,38 +96,36 @@ zone_bounds=df[(df['x1'] < x_house) & (df['x2'] > x_house) & (df['y1'] < y_house
 #zone of house has been found
 zone_number=zone_bounds.zone.iloc[0]
 
-#open correct Digital Surface Model(=DSM) and Digital Terrain Model(=DTM) file
-if zone_number < 10:   
+#open correct Digital Surface Model(=DSM) and Digital Terrain Model(=DTM) file from our directory 
+if zone_number < 10:  
+    #mask the DSM(=GeoTIff-file) with the polygon of the house to obtain the DSM data of the house
     with rasterio.open("/home/regis/Desktop/3D house/k01/DHMVIIDSMRAS1m_k0"+str(zone_number)+"/GeoTIFF/DHMVIIDSMRAS1m_k0"+str(zone_number)+".tif") as src:
             out_image_DSM, out_transform = rasterio.mask.mask(src, shapes, crop=True)
-            #out_meta = src.meta
             DSM=out_image_DSM[0]
-        
+    #mask the DTM(=GeoTIff-file) with the polygon of the house to obtain the DTM data of the house   
     with rasterio.open("/home/regis/Desktop/3D house/k01/DHMVIIDTMRAS1m_k0"+str(zone_number)+"/GeoTIFF/DHMVIIDTMRAS1m_k0"+str(zone_number)+".tif") as src:
             out_image_DTM, out_transform = rasterio.mask.mask(src, shapes, crop=True)
-            #out_meta = src.meta
             DTM=out_image_DTM[0]
 else:
+    #mask the DSM(=GeoTIff-file) with the polygon of the house to obtain the DSM data of the house
     with rasterio.open("/home/regis/Desktop/3D house/k01/DHMVIIDSMRAS1m_k"+str(zone_number)+"/GeoTIFF/DHMVIIDSMRAS1m_k"+str(zone_number)+".tif") as src:
             out_image_DSM, out_transform = rasterio.mask.mask(src, shapes, crop=True)
-            #out_meta = src.meta
             DSM=out_image_DSM[0]
-        
+    #mask the DTM(=GeoTIff-file) with the polygon of the house to obtain the DTM data of the house     
     with rasterio.open("/home/regis/Desktop/3D house/k01/DHMVIIDTMRAS1m_k"+str(zone_number)+"/GeoTIFF/DHMVIIDTMRAS1m_k"+str(zone_number)+".tif") as src:
             out_image_DTM, m = rasterio.mask.mask(src, shapes, crop=True)
-            #out_meta = src.meta
             DTM=out_image_DTM[0]
 
 #calculate Canopy Height Model(=CHM) for this house
-out_image_CHM = DSM - DTM
+CHM = DSM - DTM
 
 #create 2D-plot with z-axis equaling the CHM
-ep.plot_bands(out_image_CHM,
+ep.plot_bands(CHM,
               cmap='terrain')
 plt.show()
 
 #use plotly to plot 3d interactive figure in browser
-fig = go.Figure(data=[go.Surface(z=out_image_CHM)])
+fig = go.Figure(data=[go.Surface(z=CHM)])
 fig.update_layout(title='3d Plot House', autosize=True)
 fig.show()
 
