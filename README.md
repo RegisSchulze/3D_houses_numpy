@@ -50,37 +50,20 @@ https://www.earthdatascience.org/courses/use-data-open-source-python/data-storie
 
 ## 3D_house.py
 
-This is the file prints the 3D house of a certain adress in Flanders; using the DSM and DTM data from "The digitaal hoogtemodel vlaanderen".
+This file prints the 3D house of a certain adress in Flanders; using the DSM and DTM data from "The digitaal hoogtemodel vlaanderen".
 
 Steps of the code:
 1. Ask user for adress: line 21-24
 2. Search for the coordinates of the floorplan of this house using the API "Basisregisters Vlaanderen": line 30-44
 3. Create a polygon from these coordinates which is necessary when masking a TIFF-file: line 46-55
 4. Determine in which of the 43 zones the adress can be found: lines 66-97
-5. Open the DSM and DTM file of the correct zone: lines 99-119
-6. Calculate the CHM: lines 121-122
-7. Create a 2D-plot of the house, with height differences portrayed by different collors, by using earthpy.plot and matplotlib.pyplot: lines 124-127
-8. Create a 3D-plot of the house using plotly.io: lines 129-132
-9. Print excecution time: lines 134-135
+5. Open the DSM and DTM file of the correct zone: lines 99-119, 
+NOTE these files were downloaded and unzipped in directory: 'home/regis/Desktop/3D house/k01', change this to the directory where your unzipped DTM and DSM files are
+7. Calculate the CHM: lines 121-122
+8. Create a 2D-plot of the house, with height differences portrayed by different collors, by using earthpy.plot and matplotlib.pyplot: lines 124-127
+9. Create a 3D-plot of the house using plotly.io: lines 129-132
+10. Print execution time: lines 134-135
+
+###Have fun!!!
 
 
-
-## Deliverables
-1. Publish your source code on the GitHub repository.
-
-1. Pimp up the readme file:
-* What, Why, When, How, Who.
-* Pending things to do
-1.Show us your results in a nice presentation.
-
-Show us a live demo
-
-Steps
-Create the repository
-Study the request (What & Why ?)
-Download the maps
-Identify technical challenges (How ?)
-Evaluation criterias
-It works (no bugs in the console, no error)
-You use Git from the start and during the entire process of the development (at least one push per day)
-You convince us during the final presentation
