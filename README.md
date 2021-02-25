@@ -1,12 +1,12 @@
-#3D_houses_numpy
-*3D House Project
-*Repository: 3D_houses
-*Type of Challenge: Learning & Consolidation
-*Duration: 2 weeks
-*Deadline: 25/02/21 5:00 PM
-*Deployment strategy : Github page | Powerpoint | Jupyter Notebook | Webpage | App
-*Team challenge : solo
-##Mission objectives
+# 3D_houses_numpy
+* 3D House Project
+* Repository: 3D_houses
+* Type of Challenge: Learning & Consolidation
+* Duration: 2 weeks
+* Deadline: 25/02/21 5:00 PM
+* Deployment strategy : Github page | Powerpoint | Jupyter Notebook | Webpage | App
+* Team challenge : solo
+## Mission objectives
 Consolidate the knowledge in Python, specifically in :
 
 *NumPy
