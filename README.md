@@ -66,6 +66,11 @@ Steps of the code:
 10. Create a 3D-plot of the house using plotly.io: lines 127-130
 11. Print execution time: lines 132-133
 
+
+## 3D_house_extra_attributes.py
+Under development
+
+
 ### Have fun!!!
 
 
