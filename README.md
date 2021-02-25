@@ -47,22 +47,22 @@ CHM = DSM - DTM
 More explenation can be found on following link:
 https://www.earthdatascience.org/courses/use-data-open-source-python/data-stories/what-is-lidar-data/lidar-chm-dem-dsm/
 
+NOTE: these files were downloaded and unzipped in directory: 'home/regis/Desktop/3D house/k01', change this to the directory where your unzipped DTM and DSM files are.
 
 ## 3D_house.py
 
 This file prints the 3D house of a certain adress in Flanders; using the DSM and DTM data from "The digitaal hoogtemodel vlaanderen".
 
 Steps of the code:
-1. Ask user for adress: line 21-24
+1. Ask user for adress: line 21-25
 2. Search for the coordinates of the floorplan of this house using the API "Basisregisters Vlaanderen": line 30-44
 3. Create a polygon from these coordinates which is necessary when masking a TIFF-file: line 46-55
-4. Determine in which of the 43 zones the adress can be found: lines 66-97
-5. Open the DSM and DTM file of the correct zone: lines 99-119, 
-NOTE these files were downloaded and unzipped in directory: 'home/regis/Desktop/3D house/k01', change this to the directory where your unzipped DTM and DSM files are
-7. Calculate the CHM, by masking the DSM and DTM tiff files with the polygon of the house: lines 121-122
-8. Create a 2D-plot of the house, with height differences portrayed by different collors, by using earthpy.plot and matplotlib.pyplot: lines 124-127
-9. Create a 3D-plot of the house using plotly.io: lines 129-132
-10. Print execution time: lines 134-135
+4. Determine in which of the 43 zones the adress can be found: lines 57-97
+5. Open the DSM and DTM file of the correct zone: lines 99-117 
+7. Calculate the CHM, by masking the DSM and DTM tiff files with the polygon of the house: lines 119-120
+8. Create a 2D-plot of the house, with height differences portrayed by different collors, by using earthpy.plot and matplotlib.pyplot: lines 122-125
+9. Create a 3D-plot of the house using plotly.io: lines 127-130
+10. Print execution time: lines 132-133
 
 ### Have fun!!!
 
